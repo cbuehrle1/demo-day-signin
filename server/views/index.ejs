@@ -1,0 +1,36 @@
+<% include _header %>
+    <div class="container">
+      <h1>Visitor Sign In</h1>
+      <form method="post">
+        <input name="name" type="text" class="form-inline" placeholder="Name" >
+        <input name="company" type="text" class="form-inline" placeholder="Company">
+        <input name="role" type="text" class="form-inline" placeholder="Role or Position" >
+        <input name="email" type="text" class="form-inline" placeholder="Email">
+        <input name="phoneNumber" type="text" class="form-inline" placeholder="Phone Number" >
+        <input class="post-button" type="submit" value="Post">
+      </form>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% visitors.forEach(function(visitor) { %>
+            <tr>
+              <td><%= visitor.name %></td>
+              <td><%= visitor.company %></td>
+              <td><%= visitor.role %></td>
+              <td><%= visitor.email %></td>
+              <td><%= visitor.phoneNumber %></td>
+            </tr>
+          <% }) %>
+      </tbody>
+    </table>
+    </div>
+</body>
+</html>
